@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@layer utilities {
+    .form-input input {
+        @apply w-full rounded-md p-2 mt-2 border border-slate-200 text-center;
+        direction: ltr;
+    }
+    .form-input input:focus {
+        @apply outline-sky-500;
+    }
+    .form-input input::placeholder {
+        @apply text-center;
+    }
+    .btn {
+        @apply transition-all duration-75 text-white rounded-lg p-2 w-full active:scale-[0.98] cursor-pointer;
+    }
+}

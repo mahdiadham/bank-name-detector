@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "danaRegular";
+    src: url("/public/assets/fonts/dana/dana-fanum-regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "danaMedium";
+    src: url("/public/assets/fonts/dana/dana-fanum-medium.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "danaBold";
+    src: url("/public/assets/fonts/dana/dana-fanum-bold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@theme {
+    --font-danaRegular: danaRegular;
+    --font-danaMedium: danaMedium;
+    --font-danaBold: danaBold;
+}
+
+@utility container {
+    @apply mx-auto p-4;
+}
+
+@layer base {
+    body {
+        background-color: #f8fbfc;
+        background-image:
+            linear-gradient(to right, rgba(0, 170, 255, .08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 170, 255, .08) 1px, transparent 1px),
+            radial-gradient(rgba(0, 170, 255, 0.404) 0, transparent 0),
+            radial-gradient(circle, #eef6f8, rgba(0, 170, 255, 0.08));
+        background-size:
+            64px 64px,
+            64px 64px,
+            64px 64px,
+            100% 100%;
+        background-position: center;
+    }
+}

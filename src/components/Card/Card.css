@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer utilities {
+    .input, .form-input {
+        @apply flex flex-col justify-center items-start w-full;
+    }
+    .input input {
+        @apply w-full bg-white/10 rounded-md p-2 mt-2 text-center;
+    }
+    .input input:focus {
+        @apply outline-none;
+    }
+    .input input::placeholder {
+        @apply text-center text-slate-300;
+    }
+}
