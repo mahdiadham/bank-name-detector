@@ -76,6 +76,7 @@ const App = () => {
         position: "top-center",
       });
 
+      handleClear();
       setIsLoading(false);
     }, 4000);
   }
