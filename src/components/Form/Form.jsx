@@ -16,6 +16,7 @@ const Form = ({ data }) => {
                 شماره کارت :
                 <input
                     type="text"
+                    inputMode="numeric"
                     placeholder="XXXX - XXXX - XXXX - XXXX"
                     value={cardNumber}
                     onChange={(e) => {
@@ -31,6 +32,7 @@ const Form = ({ data }) => {
                 cvv2 :
                 <input
                     type="text"
+                    inputMode="numeric"
                     placeholder="****"
                     value={cvv2}
                     onChange={handleChange}
@@ -44,6 +46,7 @@ const Form = ({ data }) => {
                     ماه انقضاء :
                     <input
                         type="text"
+                        inputMode="numeric"
                         placeholder="**"
                         value={monthExDate}
                         onChange={handleChange}
@@ -56,6 +59,7 @@ const Form = ({ data }) => {
                     سال انقضاء :
                     <input
                         type="text"
+                        inputMode="numeric"
                         placeholder="**"
                         value={yearExDate}
                         onChange={handleChange}

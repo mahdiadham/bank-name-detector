@@ -43,6 +43,13 @@
             100% 100%;
         background-position: center;
     }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        @apply appearance-none m-0;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
 }
 
 @layer utilities {
