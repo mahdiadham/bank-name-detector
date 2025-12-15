@@ -20,6 +20,7 @@ const App = () => {
 
   const handleClear = () => {
     setForm(initialFormValue);
+    setBankName(null);
   }
 
   const handleChange = (e) => {
