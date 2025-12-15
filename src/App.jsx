@@ -31,16 +31,16 @@ const App = () => {
     }));
   }
 
-  const bankNameDetector = () => {
-    if (form?.cardNumber?.length < 6) {
-      setBankName("");
+  const bankNameDetector = (e) => {
+    if (e.target.value?.length < 6) {
+      setBankName(null);
       return;
-    }
+    };
 
-    const detectedCardNumber = form?.cardNumber?.slice(0, 6);
+    const detectedCardNumber = e.target.value?.slice(0, 6);
     const bankName = data?.banksName?.[detectedCardNumber];
 
-    bankName ? setBankName(bankName) : toast.error("شماره کارت نامعتبر است");
+    setBankName(bankName || null);
   };
 
   const handleSubmit = (e) => {

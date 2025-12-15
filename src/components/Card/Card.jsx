@@ -7,12 +7,19 @@ const Card = ({ data }) => {
     const { cardNumber, cvv2, monthExDate, yearExDate } = form;    
     
     const copyToClipboard = (cardNumber) => {
-        navigator.clipboard.writeText(cardNumber);
+        const pureNumber = cardNumber.replace(/\D/g, "");
+
+        if (!/^\d{16}$/.test(pureNumber)) {
+            toast.error("شماره کارت معتبر نیست");
+            return;
+        }
+
+        navigator.clipboard.writeText(pureNumber);
         toast.success("شماره کارت با موفقیت کپی شد");
     }
 
     return (
-        <div className="bg-sky-500 rounded-lg flex flex-col justify-center items-center gap-y-4 py-6 px-8 text-slate-300 w-full shadow-xl">
+        <div className="bg-sky-600 rounded-lg flex flex-col justify-center items-center gap-y-4 p-6 text-slate-300 w-full shadow-xl">
             <Activity mode={bankName ? "visible" : "hidden"}>
                 <span className="text-white self-end font-danaBold">
                     {bankName}
@@ -21,10 +28,17 @@ const Card = ({ data }) => {
             <label className="input">
                 شماره کارت :
                 <input
+                    dir="ltr"
                     className="cursor-pointer"
                     type="text"
                     placeholder="XXXX - XXXX - XXXX - XXXX"
-                    value={cardNumber}
+                    value={
+                        cardNumber
+                        .replace(/\D/g, "")
+                        .slice(0, 16)
+                        .replace(/(.{4})/g, " $1 -")
+                        .replace(/-$/, "")
+                    }
                     readOnly
                     onClick={() => copyToClipboard(cardNumber)}
                 />

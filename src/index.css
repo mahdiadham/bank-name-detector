@@ -44,3 +44,9 @@
         background-position: center;
     }
 }
+
+@layer utilities {
+    .form-input, .input {
+        @apply font-danaMedium;
+    }
+}

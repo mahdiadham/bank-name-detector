@@ -20,7 +20,7 @@ const Form = ({ data }) => {
                     value={cardNumber}
                     onChange={(e) => {
                         handleChange(e)
-                        bankNameDetector();
+                        bankNameDetector(e);
                     }}
                     id={cardNumberID}
                     name={"cardNumber"}
@@ -75,7 +75,7 @@ const Form = ({ data }) => {
                 </button>
                 <button
                     type="button"
-                    className="bg-sky-500 btn"
+                    className={`bg-sky-600 btn ${isLoading && "bg-slate-300 !text-slate-600"}`}
                     onClick={handleSubmit}
                     disabled={isLoading}
                 >

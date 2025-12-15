@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 @layer utilities {
+    .form-input {
+        @apply flex flex-col justify-center items-start w-full;
+    }
     .form-input input {
         @apply w-full rounded-md p-2 mt-2 border border-slate-200 text-center;
-        direction: ltr;
+        direction: ltr !important;
     }
     .form-input input:focus {
-        @apply outline-sky-500;
+        @apply outline-sky-600;
     }
     .form-input input::placeholder {
         @apply text-center;
